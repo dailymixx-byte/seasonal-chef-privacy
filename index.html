@@ -77,31 +77,43 @@
   <section>
     <h2>Information We Collect</h2>
     <p>Account information: when you create an account, we store your email address via Supabase Authentication.</p>
-    <p>Content you create: pantry items, shopping lists, meal plans, food ratings, dietary preferences, and any recipes you write yourself are stored under your account so they sync across your devices.</p>
-    <p>Camera access: if you use the barcode scanner to add pantry items, the camera is used only to read the barcode on-device - photos are not stored or uploaded.</p>
+    <p>Content you create: pantry items, shopping lists, meal plans, food ratings, dietary preferences, custom recipes, and your supplement list (name, dose, and timing of anything you choose to track) are stored under your account so they sync across your devices.</p>
+    <p>Nutrition and food logs: meals you log manually, by scanning a packaged food's barcode, by searching a food database, or by photographing a meal are stored under your account, including the calories and macros associated with each entry.</p>
+    <p>Camera access: used to scan barcodes (pantry items, food logging, supplements) on-device, and to photograph a meal for AI-estimated macros. Barcode scans never leave your device as an image. A meal photo is sent to our AI provider (see Third-Party Services) for analysis and is not stored by us afterward.</p>
+    <p>Microphone access: if you use hands-free voice commands in Cooking Mode, spoken commands are converted to text by your device's own speech recognition. We do not record, transmit, or store audio.</p>
+  </section>
+
+  <section>
+    <h2>Health &amp; Fitness Data</h2>
+    <p>Body weight, body fat percentage, and body measurements (waist, chest, hips, arm, thigh, neck) that you enter manually, or that sync from a paired Bluetooth scale, are stored under your account and used to show your weigh-in history and trends, and to power features like adaptive calorie targets during a cutting phase and safe-rate-of-loss guidance.</p>
+    <p>Apple Health / Google Health Connect (optional, off by default): if you explicitly turn this on, we read your weight and body fat data (and, on iOS, waist circumference where available) from Apple Health or Google Health Connect so scales that sync there - even ones we don't otherwise support - work automatically. This is read-only: the app never writes anything back to Apple Health or Health Connect, and nothing is read from either until you turn the feature on in Settings. You can disconnect it at any time, which stops all further reading immediately.</p>
+    <p>Progress photos (optional): photos you choose to add are stored in a private location that only your account can access. They are never public, and are only ever viewed through short-lived, per-request links - not a permanent public URL.</p>
+    <p>All of the above is used only to show it back to you (history, trends, and the features listed above) and is never sold or shared with advertisers.</p>
   </section>
 
   <section>
     <h2>How We Use Your Information</h2>
-    <p>Your data is used to provide the app's features: syncing your pantry, shopping list, and meal plan across devices, and personalizing recipe search results to your dietary preferences and ratings. We do not sell your data.</p>
+    <p>Your data is used to provide the app's features: syncing your pantry, shopping list, meal plan, and nutrition/health tracking across devices, and personalizing recipe search results and calorie/macro targets to your dietary preferences, ratings, and logged history. We do not sell your data.</p>
   </section>
 
   <section>
     <h2>Third-Party Services</h2>
-    <p>Recipe search uses external recipe databases (Spoonacular, Edamam, TheMealDB, Tasty) and image services (Pexels) - search terms and ingredient names may be sent to these providers to return results. Nutrition lookups may use the FatSecret API. Your account credentials are never shared with these services.</p>
+    <p>Recipe search uses external recipe databases (Spoonacular, Edamam, TheMealDB, Tasty) and image services (Pexels) - search terms and ingredient names may be sent to these providers to return results. Nutrition lookups may use the FatSecret API, USDA FoodData Central, or Open Food Facts (barcode product lookups). Your account credentials are never shared with these services.</p>
+    <p>AI meal photo analysis: if you photograph a meal to log it, that photo is sent to Anthropic's Claude API to estimate the food items and macros shown, and is not stored by us or, to our knowledge, retained by Anthropic beyond processing the request.</p>
+    <p>Apple Health / Google Health Connect: see Health &amp; Fitness Data above - this integration is opt-in and read-only.</p>
     <p>Sign in with Apple / Google: if you use these options, the respective provider authenticates you and shares your email address with us; we never see or store your Apple or Google password.</p>
     <p>Crash reports: if enabled, technical crash/error data (not your personal content) may be sent to Sentry to help us fix bugs.</p>
-    <p>Product analytics: if enabled, we send app usage data (which screens and features you use) to PostHog, associated with your account's user ID and email so we can, for example, respond to a support request about your account. This does not include your pantry contents, recipes, or other personal content you create.</p>
+    <p>Product analytics: if enabled, we send app usage data (which screens and features you use) to PostHog, associated with your account's user ID and email so we can, for example, respond to a support request about your account. This does not include your pantry contents, recipes, health data, or other personal content you create.</p>
   </section>
 
   <section>
     <h2>Data Storage &amp; Security</h2>
-    <p>Your data is stored in a Supabase (PostgreSQL) database with row-level security, meaning your account can only access your own data. Data in transit is encrypted (HTTPS/TLS).</p>
+    <p>Your data is stored in a Supabase (PostgreSQL) database with row-level security, meaning your account can only access your own data. Data in transit is encrypted (HTTPS/TLS). Progress photos are stored in a private file bucket with the same per-account access restriction, never a public URL.</p>
   </section>
 
   <section>
     <h2>Your Choices</h2>
-    <p>You can edit or delete your pantry items, shopping list, ratings, and custom recipes at any time from within the app. You can permanently delete your account and all associated data from Profile &gt; Account Settings.</p>
+    <p>You can edit or delete your pantry items, shopping list, ratings, custom recipes, individual weigh-ins, body measurements, progress photos, supplements, and nutrition log entries at any time from within the app. You can turn Apple Health / Google Health Connect syncing off at any time from Settings, which stops it immediately. You can permanently delete your account and all associated data, including all health and nutrition data described above, from Profile &gt; Account Settings.</p>
   </section>
 
   <section>
